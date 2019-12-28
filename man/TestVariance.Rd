@@ -7,9 +7,11 @@
 TestVariance(TESTFUN, M, ...)
 }
 \arguments{
-\item{N}{the number of samples}
+\item{TESTFUN}{the number of samples}
 
-\item{thin}{the number of between-sample random numbers}
+\item{M}{the number of between-sample random numbers}
+
+\item{...}{hhh}
 }
 \value{
 a random sample of size \code{n}
@@ -19,6 +21,6 @@ mediation analysis using R
 }
 \examples{
 \dontrun{
-TestVariance(RMonte,1000,exp,1,5,1000)
+TestVariance(RMonte,10,exp,1,5,100)
 }
 }
