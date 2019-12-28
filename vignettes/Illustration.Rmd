@@ -11,4 +11,81 @@ vignette: >
 
 ## Overview
 
-__SC19024__ is a simple R package developed to achieve several common tasks in statistics somputation. The first function RMonte provides an easy way to do Monte Carlo Integration. It can automatically reduce the variance.
+__SC19024__ is a simple R package developed to achieve several common tasks in statistics computation. The first function RMonte provides an easy way to do Monte Carlo Integration. It can automatically reduce the variance by several methods. The second function can improve the efficiency of bootstrap in estimating mean value of a dataset by implementing all the process in Cpp. It can provide variance and different kind of confidence interval as well.
+
+#RMonte
+
+Argument:
+
+FUN: the integrated function
+
+low,up: integration interval
+
+N: number of simulation
+
+layer: number of stratification
+
+Method: way to reduce the variance
+
+```{r}
+library(SC19024)
+RMonte(FUN=exp,low = 0,up = 5,N=1000,layer = 5, Method = 'control')
+RMonte(FUN = function(x){x^2},0,1,1000,5,'control')
+
+```
+
+An addtional function TestVariance is available to test the variance reduced by this package.
+
+For example
+```{r}
+# normal monte carlo integration in interval [0,5]
+TestVariance(RMonte,100,exp,0,5,1000,1,'None')
+
+# reduce by antithetic variable
+TestVariance(RMonte,100,exp,0,5,1000,1,'Antithetic')
+
+# reduce by control variable
+TestVariance(RMonte,100,exp,0,5,1000,1,'control')
+
+#reduce by stratification
+TestVariance(RMonte,100,exp,0,5,1000,3,'None')
+
+# stratification and control variable
+TestVariance(RMonte,100,exp,0,5,1000,3,'control')
+
+```
+
+Another example
+
+```{r}
+TestVariance(RMonte,100,function(x){x^2},0,5,1000,1,'None')
+TestVariance(RMonte,100,function(x){x^2},0,5,1000,1,'control')
+
+```
+
+the variance are reduced more than 1000 times.
+
+#CBoot
+
+Argument:
+
+DATA: a vector contain all the data
+
+sims: number of replicates
+
+Method: the type of confidence interval
+
+alpha: the confidence parameter
+
+An example:
+```{r}
+Cboot(DATA = 1:100,sims = 100,Method = 'Perc',alpha = 0.05)
+```
+
+Comparing with the package boot:
+
+```{r}
+library(boot)
+library(microbenchmark)
+microbenchmark(Cboot(DATA = 1:100,sims = 10,Method = 'Perc',alpha = 0.05),boot(1:100,statistic = function(data,index){mean(data[index])},R=10))
+```
