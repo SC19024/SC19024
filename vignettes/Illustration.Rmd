@@ -1,0 +1,14 @@
+---
+title: "Illustration"
+author: "19024"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to SC19024}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Overview
+
+__SC19024__ is a simple R package developed to achieve several common tasks in statistics somputation. The first function RMonte provides an easy way to do Monte Carlo Integration. It can automatically reduce the variance.

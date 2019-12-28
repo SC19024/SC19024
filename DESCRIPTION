@@ -13,6 +13,8 @@ License: GPL (>= 2)
 Encoding: UTF-8
 Imports: Rcpp (>= 0.12.18)
 LinkingTo: Rcpp
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr 
 RoxygenNote: 7.0.2
 URL: http://github.com/SC19024/SC19024
 BugReports: http://github.com/SC19024/SC19024/issues

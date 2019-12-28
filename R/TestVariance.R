@@ -1,9 +1,9 @@
-#' @title mediation analysis using R
-#' @description mediation analysis using R
+#' @title TestVariance
+#' @description compute the variance of an estimation
 #' @param TESTFUN the number of samples
-#' @param M the number of between-sample random numbers
-#' @param ... hhh
-#' @return a random sample of size \code{n}
+#' @param M the number of simulations
+#' @param ... other parameters
+#' @return real value number.
 #' @examples
 #' \dontrun{
 #' TestVariance(RMonte,10,exp,1,5,100)

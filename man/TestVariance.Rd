@@ -2,22 +2,22 @@
 % Please edit documentation in R/TestVariance.R
 \name{TestVariance}
 \alias{TestVariance}
-\title{mediation analysis using R}
+\title{TestVariance}
 \usage{
 TestVariance(TESTFUN, M, ...)
 }
 \arguments{
 \item{TESTFUN}{the number of samples}
 
-\item{M}{the number of between-sample random numbers}
+\item{M}{the number of simulations}
 
-\item{...}{hhh}
+\item{...}{other parameters}
 }
 \value{
-a random sample of size \code{n}
+real value number.
 }
 \description{
-mediation analysis using R
+compute the variance of an estimation
 }
 \examples{
 \dontrun{

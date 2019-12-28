@@ -2,28 +2,28 @@
 % Please edit documentation in R/RMonte.R
 \name{RMonte}
 \alias{RMonte}
-\title{mediation analysis using R}
+\title{RMonte}
 \usage{
 RMonte(FUN, low, up, N, layer = 1, Method = "None")
 }
 \arguments{
-\item{FUN}{the number of samples}
+\item{FUN}{the function want to integrate}
 
-\item{low}{the number of between-sample random numbers}
+\item{low}{the lower bound of the integration interval}
 
-\item{up}{hhh}
+\item{up}{the up bound of the integration interval}
 
-\item{N}{hhh}
+\item{N}{time of simulations}
 
-\item{layer}{hhh}
+\item{layer}{the layer of stratification}
 
-\item{Method}{hhh}
+\item{Method}{the variance-reduction method,None,control,Antithetic}
 }
 \value{
-a random sample of size \code{n}
+the value of integration
 }
 \description{
-mediation analysis using R
+Monte Carlo integration
 }
 \examples{
 \dontrun{

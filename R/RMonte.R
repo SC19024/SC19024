@@ -1,14 +1,15 @@
-#' @title mediation analysis using R
-#' @description mediation analysis using R
-#' @param FUN the number of samples
-#' @param low the number of between-sample random numbers
-#' @param up hhh
-#' @param N hhh
-#' @param layer hhh
-#' @param Method hhh
-#' @return a random sample of size \code{n}
+#' @title RMonte
+#' @description Monte Carlo integration 
+#' @param FUN the function want to integrate
+#' @param low the lower bound of the integration interval
+#' @param up the up bound of the integration interval
+#' @param N time of simulations
+#' @param layer the layer of stratification
+#' @param Method the variance-reduction method,None,control,Antithetic
+#' @return the value of integration
 #' @importFrom Rcpp evalCpp
-#' @importFrom stats rnorm runif var cov
+#' @importFrom stats rnorm runif var cov sd qnorm
+#' @useDynLib SC19024
 #' @examples
 #' \dontrun{
 #' RMonte_stratify(exp,0,1,10)
@@ -21,7 +22,7 @@ RMonte <- function(FUN,low,up,N,layer=1,Method='None'){
   for(i in 1:layer){
     if(Method=="None"){
       X = runif(N_0,low+(i-1)*R,low+i*R)
-      temp[i] = mean(FUN(X)*R)     
+      temp[i] = mean(FUN(X)*R)
     }
     if(Method=='control'){
       X = runif(N_0,low+(i-1)*R,low+i*R)
@@ -39,9 +40,6 @@ RMonte <- function(FUN,low,up,N,layer=1,Method='None'){
       X = c(X_1,X_2)
       g_X_antithetic = FUN(X)
       temp[i] = mean(g_X_antithetic*R)
-    }
-    else{
-      break
     }
   }
   return(sum(temp))
