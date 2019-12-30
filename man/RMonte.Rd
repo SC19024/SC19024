@@ -27,6 +27,6 @@ Monte Carlo integration
 }
 \examples{
 \dontrun{
-RMonte_stratify(exp,0,1,10)
+RMonte(exp,0,1,10)
 }
 }

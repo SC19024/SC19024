@@ -10,6 +10,24 @@ C_mean <- function(X) {
     .Call('_SC19024_C_mean', PACKAGE = 'SC19024', X)
 }
 
+compute_poly <- function(x, COEF) {
+    .Call('_SC19024_compute_poly', PACKAGE = 'SC19024', x, COEF)
+}
+
+#' @title generate a random variable from an exp-family distribution
+#' @description generate a random variable from an exp-family distribution by MCMC
+#' @param COEF_h polynomial of hx
+#' @param COEF polynomial of the fucntion in exp item
+#' @param sigma variance of the random walk
+#' @param L length of the markov chain 
+#' @param low lower bound of the support set
+#' @param up up bound of the support set
+#' @return a random sample of size \code{n}
+#' @export
+C_poly <- function(COEF_h, COEF, sigma, L, low, up) {
+    .Call('_SC19024_C_poly', PACKAGE = 'SC19024', COEF_h, COEF, sigma, L, low, up)
+}
+
 rcpp_hello_world <- function() {
     .Call('_SC19024_rcpp_hello_world', PACKAGE = 'SC19024')
 }

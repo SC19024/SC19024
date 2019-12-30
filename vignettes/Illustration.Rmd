@@ -89,3 +89,37 @@ library(boot)
 library(microbenchmark)
 microbenchmark(Cboot(DATA = 1:100,sims = 10,Method = 'Perc',alpha = 0.05),boot(1:100,statistic = function(data,index){mean(data[index])},R=10))
 ```
+
+# C_poly
+
+C_poly is used to sample from a arbitary exp-family distribution.
+
+$$f(x,\theta) = C(\theta)exp\{\Sigma_{i=1}^k\theta_iT_i(x)\}h(x)$$
+
+for simplicity, we consider both $h(X)C(\theta)$ and $\Sigma_{i=1}^k\theta_iT_i(x)$ are a polynominal of x. so it is 
+$C(x,\theta)exp\{\tilde{C}(x,\theta)\}$. This function is implemented in C totally and is very fast.
+
+Argument
+
+COEF_h: the coefficients of polynomial $C(\theta,x)$
+
+COEF: coefficients of polynomial $\tilde{C}(\theta,x)$
+
+sigma: variance of the random walk
+
+L: length of the markov chain 
+
+low,up: lower and upper bound of the supporting set.
+
+an example of standard normal distribution and exp distribution
+```{r}
+library(ggplot2)
+NORMAL = C_poly(c(1),c(0,0,-0.5),1,10000,-1000,1000)
+EXP = C_poly(c(1),c(0,-1),1,10000,0,1000)
+POLY = C_poly(c(0,0,1),c(0),1,10000,0,1)
+DT = as.data.frame(cbind(NORMAL,EXP,POLY))
+ggplot(DT) + geom_histogram(mapping = aes(x=NORMAL,y=..density..),bins = 80) + stat_function(fun=dnorm)
+ggplot(DT) + geom_histogram(mapping = aes(x=EXP,y=..density..),bins=80) + stat_function(fun=dexp)
+ggplot(DT) + geom_histogram(mapping = aes(x=POLY,y=..density..),bins=80) + stat_function(fun=function(x){3*x^2})
+```
+

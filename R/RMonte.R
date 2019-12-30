@@ -12,7 +12,7 @@
 #' @useDynLib SC19024
 #' @examples
 #' \dontrun{
-#' RMonte_stratify(exp,0,1,10)
+#' RMonte(exp,0,1,10)
 #' }
 #' @export
 RMonte <- function(FUN,low,up,N,layer=1,Method='None'){

@@ -16,6 +16,34 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// compute_poly
+double compute_poly(double x, NumericVector COEF);
+RcppExport SEXP _SC19024_compute_poly(SEXP xSEXP, SEXP COEFSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type x(xSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type COEF(COEFSEXP);
+    rcpp_result_gen = Rcpp::wrap(compute_poly(x, COEF));
+    return rcpp_result_gen;
+END_RCPP
+}
+// C_poly
+NumericVector C_poly(NumericVector COEF_h, NumericVector COEF, double sigma, int L, double low, double up);
+RcppExport SEXP _SC19024_C_poly(SEXP COEF_hSEXP, SEXP COEFSEXP, SEXP sigmaSEXP, SEXP LSEXP, SEXP lowSEXP, SEXP upSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type COEF_h(COEF_hSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type COEF(COEFSEXP);
+    Rcpp::traits::input_parameter< double >::type sigma(sigmaSEXP);
+    Rcpp::traits::input_parameter< int >::type L(LSEXP);
+    Rcpp::traits::input_parameter< double >::type low(lowSEXP);
+    Rcpp::traits::input_parameter< double >::type up(upSEXP);
+    rcpp_result_gen = Rcpp::wrap(C_poly(COEF_h, COEF, sigma, L, low, up));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rcpp_hello_world
 List rcpp_hello_world();
 RcppExport SEXP _SC19024_rcpp_hello_world() {
@@ -29,6 +57,8 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_SC19024_C_mean", (DL_FUNC) &_SC19024_C_mean, 1},
+    {"_SC19024_compute_poly", (DL_FUNC) &_SC19024_compute_poly, 2},
+    {"_SC19024_C_poly", (DL_FUNC) &_SC19024_C_poly, 6},
     {"_SC19024_rcpp_hello_world", (DL_FUNC) &_SC19024_rcpp_hello_world, 0},
     {NULL, NULL, 0}
 };
