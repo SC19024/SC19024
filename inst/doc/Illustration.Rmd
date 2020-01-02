@@ -1,0 +1,126 @@
+---
+title: "Illustration"
+author: "19024"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to SC19024}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Overview
+
+__SC19024__ is a simple R package developed to achieve several common tasks in statistics computation. The first function RMonte provides an easy way to do Monte Carlo Integration. It can automatically reduce the variance by several methods. The second function can improve the efficiency of bootstrap in estimating mean value of a dataset by implementing all the process in Cpp. It can provide variance and different kind of confidence interval as well. The last function C_poly provide a way to generate an exponential family of distributions via MCMC. It is implemented in C so is very fast.
+
+#RMonte
+
+Mote Carlo integration is very common in statistical computation. This function RMonte can do monte carlo integration and automatically apply some variance-reduction method. Its arguments are as follows.
+
+Argument:
+
+FUN: the function being integrated
+
+low,up: integration interval
+
+N: number of simulation
+
+layer: number of stratification
+
+Method: way to reduce the variance(control,antithetic)
+
+This is an example of integrating $e^x$ in interval $[0,5]$ and integrating $x^2$ in interval $[0,1]$. Control variables are used to reduce variance.
+```{r}
+library(SC19024)
+RMonte(FUN=exp,low = 0,up = 5,N=1000,layer = 5, Method = 'control')
+RMonte(FUN = function(x){x^2},0,1,1000,5,'control')
+
+```
+
+In order to compare the performance of variance reduction, an addtional function TestVariance is available. It can compute the variance of Monte carlo integration. 
+
+The first argument is the Monte Carlo function and the second is the number of iteration that we used to commpute variance. Other arguments are the same with RMonte 
+
+For example
+```{r}
+# normal monte carlo integration in interval [0,5]
+TestVariance(RMonte,100,exp,0,5,1000,1,'None')
+
+# reduce variance by antithetic variable
+TestVariance(RMonte,100,exp,0,5,1000,1,'Antithetic')
+
+# reduce variance by control variable
+TestVariance(RMonte,100,exp,0,5,1000,1,'control')
+
+#reduce variance by stratification
+TestVariance(RMonte,100,exp,0,5,1000,3,'None')
+
+# stratification and control variable at the same time
+TestVariance(RMonte,100,exp,0,5,1000,3,'control')
+
+```
+
+the variance are reduced significantly.
+
+#CBoot
+
+CBoot is a function that can compute the bootstrap estimates of mean value faster. It is basically the same as boot in package boot. I rewrite the function in C and did some improvements in sampling and iteration to make it faster.
+
+Argument:
+
+DATA: a vector contain all the data
+
+sims: number of replicates in bootstrap
+
+Method: the type of confidence interval. should be 'norm', 'perc', 'basic' or 'stud'
+
+alpha: 1 - confidence parameter
+
+An example:
+```{r}
+Cboot(DATA = 1:100,sims = 100,Method = 'Perc',alpha = 0.05)
+```
+
+Comparing with the package boot, it is about 2 tiems faster.
+
+```{r warning=FALSE, message=FALSE}
+library(boot)
+library(microbenchmark)
+microbenchmark(Cboot(DATA = 1:100,sims = 10,Method = 'Perc',alpha = 0.05),boot(1:100,statistic = function(data,index){mean(data[index])},R=10))
+```
+
+# C_poly
+
+C_poly is used to sample from a arbitary exp-family distribution where the parameter has a polynomial format. Note the exp-family distribution is:
+
+$$f(x,\theta) = C(\theta)exp\{\Sigma_{i=1}^k\theta_iT_i(x)\}h(x)$$
+
+We require $h(X)C(\theta)$ and $\Sigma_{i=1}^k\theta_iT_i(x)$ to be polynominal of x. so it is 
+$$C(x,\theta)exp\{\tilde{C}(x,\theta)\}$$. This function is implemented in C totally and is very fast.
+
+Argument
+
+COEF_h: the coefficients of polynomial $C(\theta,x)$. it should have an increasing order.
+
+COEF: coefficients of polynomial $\tilde{C}(\theta,x)$.it should have an increasing order.
+
+sigma: variance of the random walk
+
+L: length of the markov chain 
+
+low,up: lower and upper bound of the supporting set.
+
+Here are several examples of standard normal distribution,exp distribution and distribution $f(x) = 3x^2$ in $[0,1]$
+```{r}
+library(ggplot2)
+NORMAL = C_poly(c(1),c(0,0,-0.5),1,10000,-1000,1000)
+EXP = C_poly(c(1),c(0,-1),1,10000,0,1000)
+POLY = C_poly(c(0,0,1),c(0),0.1,10000,0,1)
+
+
+DT = as.data.frame(cbind(NORMAL,EXP,POLY))
+ggplot(DT) + geom_histogram(mapping = aes(x=NORMAL,y=..density..),bins = 80) + stat_function(fun=dnorm)
+ggplot(DT) + geom_histogram(mapping = aes(x=EXP,y=..density..),bins=80) + stat_function(fun=dexp)
+ggplot(DT) + geom_histogram(mapping = aes(x=POLY,y=..density..),bins=80) + stat_function(fun=function(x){3*x^2})
+```
+

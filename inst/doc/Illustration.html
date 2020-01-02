@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="author" content="19024" />
+
+<meta name="date" content="2020-01-02" />
+
+<title>Illustration</title>
+
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+<link href="data:text/css;charset=utf-8,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23header%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%20code%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" rel="stylesheet" type="text/css" />
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Illustration</h1>
+<h4 class="author">19024</h4>
+<h4 class="date">2020-01-02</h4>
+
+
+
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p><strong>SC19024</strong> is a simple R package developed to achieve several common tasks in statistics computation. The first function RMonte provides an easy way to do Monte Carlo Integration. It can automatically reduce the variance by several methods. The second function can improve the efficiency of bootstrap in estimating mean value of a dataset by implementing all the process in Cpp. It can provide variance and different kind of confidence interval as well. The last function C_poly provide a way to generate an exponential family of distributions via MCMC. It is implemented in C so is very fast.</p>
+</div>
+<div id="rmonte" class="section level1">
+<h1>RMonte</h1>
+<p>Mote Carlo integration is very common in statistical computation. This function RMonte can do monte carlo integration and automatically apply some variance-reduction method. Its arguments are as follows.</p>
+<p>Argument:</p>
+<p>FUN: the function being integrated</p>
+<p>low,up: integration interval</p>
+<p>N: number of simulation</p>
+<p>layer: number of stratification</p>
+<p>Method: way to reduce the variance(control,antithetic)</p>
+<p>This is an example of integrating <span class="math inline">\(e^x\)</span> in interval <span class="math inline">\([0,5]\)</span> and integrating <span class="math inline">\(x^2\)</span> in interval <span class="math inline">\([0,1]\)</span>. Control variables are used to reduce variance.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(SC19024)
+<span class="kw">RMonte</span>(<span class="dt">FUN=</span>exp,<span class="dt">low =</span> <span class="dv">0</span>,<span class="dt">up =</span> <span class="dv">5</span>,<span class="dt">N=</span><span class="dv">1000</span>,<span class="dt">layer =</span> <span class="dv">5</span>, <span class="dt">Method =</span> <span class="st">'control'</span>)</code></pre></div>
+<pre><code>## [1] 147.1579</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">RMonte</span>(<span class="dt">FUN =</span> <span class="cf">function</span>(x){x<span class="op">^</span><span class="dv">2</span>},<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1000</span>,<span class="dv">5</span>,<span class="st">'control'</span>)</code></pre></div>
+<pre><code>## [1] 0.3331725</code></pre>
+<p>In order to compare the performance of variance reduction, an addtional function TestVariance is available. It can compute the variance of Monte carlo integration.</p>
+<p>The first argument is the Monte Carlo function and the second is the number of iteration that we used to commpute variance. Other arguments are the same with RMonte</p>
+<p>For example</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># normal monte carlo integration in interval [0,5]</span>
+<span class="kw">TestVariance</span>(RMonte,<span class="dv">100</span>,exp,<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">1000</span>,<span class="dv">1</span>,<span class="st">'None'</span>)</code></pre></div>
+<pre><code>## [1] 41.28641</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># reduce variance by antithetic variable</span>
+<span class="kw">TestVariance</span>(RMonte,<span class="dv">100</span>,exp,<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">1000</span>,<span class="dv">1</span>,<span class="st">'Antithetic'</span>)</code></pre></div>
+<pre><code>## [1] 13.70148</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># reduce variance by control variable</span>
+<span class="kw">TestVariance</span>(RMonte,<span class="dv">100</span>,exp,<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">1000</span>,<span class="dv">1</span>,<span class="st">'control'</span>)</code></pre></div>
+<pre><code>## [1] 9.484333</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#reduce variance by stratification</span>
+<span class="kw">TestVariance</span>(RMonte,<span class="dv">100</span>,exp,<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">1000</span>,<span class="dv">3</span>,<span class="st">'None'</span>)</code></pre></div>
+<pre><code>## [1] 12.06605</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># stratification and control variable at the same time</span>
+<span class="kw">TestVariance</span>(RMonte,<span class="dv">100</span>,exp,<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">1000</span>,<span class="dv">3</span>,<span class="st">'control'</span>)</code></pre></div>
+<pre><code>## [1] 0.4129859</code></pre>
+<p>the variance are reduced significantly.</p>
+</div>
+<div id="cboot" class="section level1">
+<h1>CBoot</h1>
+<p>CBoot is a function that can compute the bootstrap estimates of mean value faster. It is basically the same as boot in package boot. I rewrite the function in C and did some improvements in sampling and iteration to make it faster.</p>
+<p>Argument:</p>
+<p>DATA: a vector contain all the data</p>
+<p>sims: number of replicates in bootstrap</p>
+<p>Method: the type of confidence interval. should be ‘norm’, ‘perc’, ‘basic’ or ‘stud’</p>
+<p>alpha: 1 - confidence parameter</p>
+<p>An example:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">Cboot</span>(<span class="dt">DATA =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>,<span class="dt">sims =</span> <span class="dv">100</span>,<span class="dt">Method =</span> <span class="st">'Perc'</span>,<span class="dt">alpha =</span> <span class="fl">0.05</span>)</code></pre></div>
+<pre><code>## $MEAN
+## [1] 50.5448
+## 
+## $SD
+## [1] 3.047675
+## 
+## $BIAS
+## [1] 0.0448
+## 
+## $INTERVAL
+## [1] 45.03 58.57</code></pre>
+<p>Comparing with the package boot, it is about 2 tiems faster.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(boot)
+<span class="kw">library</span>(microbenchmark)
+<span class="kw">microbenchmark</span>(<span class="kw">Cboot</span>(<span class="dt">DATA =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">100</span>,<span class="dt">sims =</span> <span class="dv">10</span>,<span class="dt">Method =</span> <span class="st">'Perc'</span>,<span class="dt">alpha =</span> <span class="fl">0.05</span>),<span class="kw">boot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>,<span class="dt">statistic =</span> <span class="cf">function</span>(data,index){<span class="kw">mean</span>(data[index])},<span class="dt">R=</span><span class="dv">10</span>))</code></pre></div>
+<pre><code>## Unit: microseconds
+##                                                                              expr
+##                     Cboot(DATA = 1:100, sims = 10, Method = &quot;Perc&quot;, alpha = 0.05)
+##  boot(1:100, statistic = function(data, index) {     mean(data[index]) }, R = 10)
+##      min        lq     mean   median       uq      max neval
+##  322.833  533.7115 1274.831  795.186 1470.867  7637.71   100
+##  990.773 1413.0980 2706.418 2425.204 3403.516 19775.43   100</code></pre>
+</div>
+<div id="c_poly" class="section level1">
+<h1>C_poly</h1>
+<p>C_poly is used to sample from a arbitary exp-family distribution where the parameter has a polynomial format. Note the exp-family distribution is:</p>
+<p><span class="math display">\[f(x,\theta) = C(\theta)exp\{\Sigma_{i=1}^k\theta_iT_i(x)\}h(x)\]</span></p>
+<p>We require <span class="math inline">\(h(X)C(\theta)\)</span> and <span class="math inline">\(\Sigma_{i=1}^k\theta_iT_i(x)\)</span> to be polynominal of x. so it is <span class="math display">\[C(x,\theta)exp\{\tilde{C}(x,\theta)\}\]</span>. This function is implemented in C totally and is very fast.</p>
+<p>Argument</p>
+<p>COEF_h: the coefficients of polynomial <span class="math inline">\(C(\theta,x)\)</span>. it should have an increasing order.</p>
+<p>COEF: coefficients of polynomial <span class="math inline">\(\tilde{C}(\theta,x)\)</span>.it should have an increasing order.</p>
+<p>sigma: variance of the random walk</p>
+<p>L: length of the markov chain</p>
+<p>low,up: lower and upper bound of the supporting set.</p>
+<p>Here are several examples of standard normal distribution,exp distribution and distribution <span class="math inline">\(f(x) = 3x^2\)</span> in <span class="math inline">\([0,1]\)</span></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
+NORMAL =<span class="st"> </span><span class="kw">C_poly</span>(<span class="kw">c</span>(<span class="dv">1</span>),<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="op">-</span><span class="fl">0.5</span>),<span class="dv">1</span>,<span class="dv">10000</span>,<span class="op">-</span><span class="dv">1000</span>,<span class="dv">1000</span>)
+EXP =<span class="st"> </span><span class="kw">C_poly</span>(<span class="kw">c</span>(<span class="dv">1</span>),<span class="kw">c</span>(<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>),<span class="dv">1</span>,<span class="dv">10000</span>,<span class="dv">0</span>,<span class="dv">1000</span>)
+POLY =<span class="st"> </span><span class="kw">C_poly</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>),<span class="kw">c</span>(<span class="dv">0</span>),<span class="fl">0.1</span>,<span class="dv">10000</span>,<span class="dv">0</span>,<span class="dv">1</span>)
+
+
+DT =<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">cbind</span>(NORMAL,EXP,POLY))
+<span class="kw">ggplot</span>(DT) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x=</span>NORMAL,<span class="dt">y=</span>..density..),<span class="dt">bins =</span> <span class="dv">80</span>) <span class="op">+</span><span class="st"> </span><span class="kw">stat_function</span>(<span class="dt">fun=</span>dnorm)</code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(DT) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x=</span>EXP,<span class="dt">y=</span>..density..),<span class="dt">bins=</span><span class="dv">80</span>) <span class="op">+</span><span class="st"> </span><span class="kw">stat_function</span>(<span class="dt">fun=</span>dexp)</code></pre></div>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASAAAAEgCAMAAAAjXV6yAAAAvVBMVEUAAAAAADoAAGYAOpAAZrYzMzM6AAA6ADo6Ojo6kNtNTU1NTW5NTY5NbqtNjshZWVlmAABmADpmtv9uTU1uTW5uTY5ubo5ubqtuq+SOTU2OTW6OTY6Obk2ObquOyP+QOgCQtpCQ29uQ2/+rbk2rbm6rbo6rjk2ryKur5OSr5P+2ZgC2/9u2///Ijk3I///bkDrb/7bb/9vb///kq27k///r6+v/tmb/yI7/25D/5Kv//7b//8j//9v//+T////1HoYOAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAInElEQVR4nO3dC3ebNhgGYHJZt6TtSN1tTXeJt7Td1iypt6ZJ6lz4/z9rEkjWxUifZAsM6H3PdmwrQcZPBQhioaJCvCl2vQJDD4CIAIgIgIgAiAiAiGwMdKOiPzcS/YPuFwiuCUBEOYCIcgAR5QAiygFElAOIKA8CWv74qX58eHv88svqAUAyd8cvaqCnd2fV9ffyAUAyV8//alrQwy+feGMSDwBa28SWb75UDz9/FA+s4BsW7dcmfboSAnT3spYRD+JnGnbR2T9j+gX6aUEAMoHIfZBLKBegp3enzVHs1HEUyxqI/0/1g7IF8kWvC0AAAlC3J6sOIQDJugEEIADZrwHkLwcQUZ4WyCEEoFXdAAIQgKzXAPKXA4goBxBRnhioXQhAqm4AAQhA5uvUQGXZwVqmX6A/ICsMKFFNA0uaFlSWaEEA2g6ICXWwlukXAFCqmgBElAOIKAcQUQ4gohxARHlyoLLlbAxAsm4AAQhA9msA+csBRJQDiChPD9QiBCBZN4AABCD7NYD85QAiyrsAWjufnzjQanDP9THPWf34onXMatnehKYNZA5y5uMxr868LSg3IGOAIR+K+fT+o/Zjo+4sgYwhqrwpsU2Ob2jV2qjnqhJAzrpGHPeH0gc514/LH/RWZOBn34LuVkMxV/sho+4sgfR90NWpLPUBrQlNG0gb5NxsWLwZPX3wHOYzAxL9oHrUc7OlsX7Q89WBzKg7TyB/jLoBBCAA2a8B5C/vBMj+MjCAZN0AAhCA7NcA8pcDiCjvBsgSApCsG0AAApD9GkD+8o6ATCEAyboBBCAA2a+7ALIvCQFI1g0gIgpocnffTt2CjJ1Q1i3IqBtAAOK5P9k7B5B83dqCLori4PN2QLrQ9IB4KyqKIwD59kGcaP8SQA6gRVEcsk2N3tCMunMBepwXxYw/uaWbkFF3JkD3JwGbVt5Aoc3HB6QJAUjWnQUQ2z2LHAb4ZAi0akFhMerOBCgqRt05ALHmw7uIPFvug5TQpIAStSDjfBVAsu5cgJrNLKy3aNSdC9DFYbXYv1xsc5g3OtNTA2IN6HF+uF1HcepA9ydHAGpetwA9zo9u9875hlZHzdgnRvO6pzLOBKj6+oydZshrQdqg3maQmGcq49LMZIGMqAF1YhymZypjC0g2oWkDqSGZYjSvcypj/S+rdab051V7E1OnGmpQrxjN65zKOJsWxI/xKubMxWw/5JzKOBsg83KHucthQBH7ICE0NaDHuQ6kBvWK0bzuqYxtIHkcmxqQ1UVUg3rFaF5HP2hNZ7JAG14PygcoKqoqAG0A1AhND2hRFLNF2Pc7VFUZAV0c/Ntc8QCQ+3LHLPpyB4A2Aaq7ilMDqhZ8E+PXzADk2Enf8m5QkE+mQBFRVbUDcSEA1ckESJ5npDnVaI5jkwLiWXCawO94qKryAdrwC1QOILaNAahOPkByE0vRD5omUNMPCvuamarKBXRTTA8oIqoqAAEIQLsBcsxCH7GW6RfoD0jFAZSm8p0HLchR3gtQ5RICUAPUNmNU1FqmXwBAqWrqHogHQDweIJcQgAAEoDRAjq4QgAAUCtQuBCAAASgVUKsQgAAEoGRAbUIAAhCA0gCV7Ud6ABkpSnuKWgDZQl19XgClXiAlkBrcs3xdT7DqmMo4VyA1yJkPM+TDMh1TGdNAwROPjQpIDTC840xXZ66pjHMFMoeosmeuqYwDgEY8y3HYVMb1+EzXVMZBQB01iKG0oIe3cqrelpl6Q4ACZyQZFZA2yHn5WrIASEUNchY+rqmMg4DC5pMYFZAa9cz7P3z37JjKOFsgf1RVYUBGbxFAAIoH4if1pWNtkn2sdDX1DMQDoACh1J8XQKkXGDSQ2k8DyCWU+vMCKPUCAweSQgByhbh3F4AARAHd1Md6AHnCO9QAAtDmQFwIQIQQgAghAFFCXX2sdDXtHGjtKzFJPla6mnYLpF88S/qx0tW0NZDKJkD1oWwU2VELatrQWiOaUgtSVW0G1LqVAcgSSv6x0tU0AKD1L54ByBZK/rHS1TQIoLII/N5QtkD2jghAbUIpP1a6mgYDZGxmAGpLr9NqjhFI2xEByCXU21w3IwWSRABy5uam6OXuuKMF4imKqrmOFn6SlhcQO54VAqi0jAAkUxQrLQC5iCQSgGgkAJFIAKKQ6jcAkB/Jvm40DCA1qFc8i5jCL3UqOaWFfMsBAKlBveKZayrjPoBEeH9bpvR9E6sPIDWgTjxzTSPaI5CeoiVrn1fvK5TNDXiTAakhmeKZZyrjoaQNLSZtVTrfTA3qFc88UxlHNud0R+1dbmKeFgQgnuB9UK5AalCveOaZyrirtUy/QPp+EG8z/n5QtkD+9LKW6RcAUKqaAESUA4goBxBRvjWQlvjTjugldrcAgIgFAEQsACBigfHeXKynAIgIgIgAiAiAiGwNZFwDCYq4M2xM+B9Uon5du9laSNgqrW5Sa2VbIPNvQSGRd4aNyXWc6NVZfR09apWuHQtsC2Rehw2JuDNszJssf/o15vf5OkWlvtruWGhbIPNKfmjilnh6/3fUJrZ882fcJtZlCzL/FhQYfnU7ItencfsgfmNM/g8XHs+OdBctSN0ZNvQtIoFi14nvEu8ce+n+90H6nWGD0twINML04bdIIN9msP1R7DTyKBbr07xL1DJXkZtYly0ovh8k7wwbk0ggtk6ubk177o6de3X0pIkAiAiAiACICICIAIgIgIgMF+hx3nxvcP/ytpix1/cnR6Jo77zH1Rgy0JF8ujj4XFUXh7JosX/Z32qMAog1nuqWqYii+5NZf6sxCiCm8898VgHIiA5UXXx3qIousInxyJ10bXJbP4iiPn0GDaRa0P2r3789txpVTxkHEDuCsf8AZETT4Eewr89mADKiNPhRvu79AEiP3Env/THn/UTGdPAfgIYXABEBEBEAEQEQEQARARARABEBEBEAEfkf7J/tSoRvwssAAAAASUVORK5CYII=" /><!-- --></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(DT) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x=</span>POLY,<span class="dt">y=</span>..density..),<span class="dt">bins=</span><span class="dv">80</span>) <span class="op">+</span><span class="st"> </span><span class="kw">stat_function</span>(<span class="dt">fun=</span><span class="cf">function</span>(x){<span class="dv">3</span><span class="op">*</span>x<span class="op">^</span><span class="dv">2</span>})</code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+</div>
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
