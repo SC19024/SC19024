@@ -3,24 +3,26 @@
 \alias{SC19024}
 \docType{package}
 \title{
-  A short title line describing what the package does
+SC19024
 }
 \description{
-  A more detailed description of what the package does. A length
-  of about one to five lines is recommended.
+This package implemeted several useful functions in statistical computation. The first function RMonte help you to do monte carlo integration with reduced variance. The second function improve the speed of bootstrap. The last function can sample from an arbitrary exp-family distribution.
 }
 \details{
-  This section should provide a more detailed overview of how to use the
-  package, including the most important functions.
+RMonte: mote carlo integration with reduced variance.
+
+Cboot: increasing speed of bootstrap
+
+C_poly generate sample from exp-family distribution by MCMC
+
 }
 \author{
-Your Name, email optional.
+SC19024
 
-Maintainer: Your Name <your@email.com>
+Maintainer: SC19024
 }
 \references{
-  This optional section can contain literature or other references for
-  background information.
+statiscal computation
 }
 \keyword{ package }
 \seealso{
@@ -28,7 +30,8 @@ Maintainer: Your Name <your@email.com>
 }
 \examples{
   \dontrun{
-     ## Optional simple examples of the most important functions
-     ## These can be in \dontrun{} and \donttest{} blocks.   
+    RMonte(FUN=exp,low = 0,up = 5,N=1000,layer = 5, Method = 'control')
+    Cboot(DATA = 1:100,sims = 10,Method = 'Perc',alpha = 0.05)
+    C_poly(c(1),c(0,0,-0.5),1,10000,-1000,1000)
   }
 }
