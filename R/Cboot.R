@@ -1,10 +1,14 @@
 #' @title Cboot
 #' @description bootstrap estimation of mean of a vector
-#' @param DATA vector
+#' @param DATA a vector which contain the data
 #' @param sims the number of simulations
-#' @param Method algorithm for computing confidence interval
-#' @param alpha confidence interval
+#' @param Method algorithm for computing confidence interval. sohuld be Norm, perc, basic, stud
+#' @param alpha 1 - confidence level
 #' @return a random sample of size \code{n}
+#' @examples
+#' \dontrun{
+#' Cboot(1:100,10,'Norm',0.05)
+#' }
 #' @export
 Cboot = function(DATA, sims = 10,Method = 'Norm',alpha=0.05){
   N = length(DATA)

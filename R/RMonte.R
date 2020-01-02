@@ -1,18 +1,18 @@
 #' @title RMonte
 #' @description Monte Carlo integration 
-#' @param FUN the function want to integrate
+#' @param FUN the function we want to integrate
 #' @param low the lower bound of the integration interval
 #' @param up the up bound of the integration interval
 #' @param N time of simulations
 #' @param layer the layer of stratification
-#' @param Method the variance-reduction method,None,control,Antithetic
+#' @param Method the variance-reduction method. should be None,control,Antithetic
 #' @return the value of integration
 #' @importFrom Rcpp evalCpp
 #' @importFrom stats rnorm runif var cov sd qnorm
 #' @useDynLib SC19024
 #' @examples
 #' \dontrun{
-#' RMonte(exp,0,1,10)
+#' RMonte(exp,0,1,100)
 #' }
 #' @export
 RMonte <- function(FUN,low,up,N,layer=1,Method='None'){

@@ -20,8 +20,13 @@ C_poly(COEF_h, COEF, sigma, L, low, up)
 \item{up}{up bound of the support set}
 }
 \value{
-a random sample of size \code{n}
+a random sample of size \code{L}
 }
 \description{
 generate a random variable from an exp-family distribution by MCMC
+}
+\examples{
+\dontrun{
+C_poly(c(1),c(0,0,-0.5),1,10000,-1000,1000)
+}
 }

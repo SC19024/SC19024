@@ -7,17 +7,22 @@
 Cboot(DATA, sims = 10, Method = "Norm", alpha = 0.05)
 }
 \arguments{
-\item{DATA}{vector}
+\item{DATA}{a vector which contain the data}
 
 \item{sims}{the number of simulations}
 
-\item{Method}{algorithm for computing confidence interval}
+\item{Method}{algorithm for computing confidence interval. sohuld be Norm, perc, basic, stud}
 
-\item{alpha}{confidence interval}
+\item{alpha}{1 - confidence level}
 }
 \value{
 a random sample of size \code{n}
 }
 \description{
 bootstrap estimation of mean of a vector
+}
+\examples{
+\dontrun{
+Cboot(1:100,10,'Norm',0.05)
+}
 }

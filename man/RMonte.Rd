@@ -7,7 +7,7 @@
 RMonte(FUN, low, up, N, layer = 1, Method = "None")
 }
 \arguments{
-\item{FUN}{the function want to integrate}
+\item{FUN}{the function we want to integrate}
 
 \item{low}{the lower bound of the integration interval}
 
@@ -17,7 +17,7 @@ RMonte(FUN, low, up, N, layer = 1, Method = "None")
 
 \item{layer}{the layer of stratification}
 
-\item{Method}{the variance-reduction method,None,control,Antithetic}
+\item{Method}{the variance-reduction method. should be None,control,Antithetic}
 }
 \value{
 the value of integration
@@ -27,6 +27,6 @@ Monte Carlo integration
 }
 \examples{
 \dontrun{
-RMonte(exp,0,1,10)
+RMonte(exp,0,1,100)
 }
 }

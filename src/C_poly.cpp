@@ -20,8 +20,12 @@ double compute_poly(double x, NumericVector COEF){
 //' @param L length of the markov chain 
 //' @param low lower bound of the support set
 //' @param up up bound of the support set
-//' @return a random sample of size \code{n}
+//' @return a random sample of size \code{L}
 //' @export
+//' @examples
+//'\dontrun{
+//' C_poly(c(1),c(0,0,-0.5),1,10000,-1000,1000)
+//' }
 // [[Rcpp::export]]
 NumericVector C_poly(NumericVector COEF_h,NumericVector COEF, double sigma, int L,
                      double low, double up){
